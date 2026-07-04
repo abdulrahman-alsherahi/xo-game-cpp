@@ -52,7 +52,7 @@ int main() {
             }
         }
 
-        currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+        currentPlayer = (currentPlayer == 'X') ? 'O' : 'X'; 
     }
 
     cout << "\nUnentschieden!\n";
