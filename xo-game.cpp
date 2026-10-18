@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 using namespace std;
 
 bool checkWin(char b[9]) {
@@ -31,7 +32,12 @@ int main() {
             cout << "\nWähl eine Nummer von 1 bis 9: ";
             cin >> choice;
 
-            if (choice < 1 || choice > 9) {
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Deine Wahl ist falsch\n";
+            }
+            else if (choice < 1 || choice > 9) {
                 cout << "Deine Wahl ist falsch\n";
             }
             else if (board[choice - 1] == 'X' || board[choice - 1] == 'O') {
